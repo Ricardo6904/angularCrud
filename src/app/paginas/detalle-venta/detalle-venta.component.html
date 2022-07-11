@@ -1,0 +1,77 @@
+<div class="container">
+    <div class="row text-center mt-4">
+      <div class="col">
+        <img src="https://debmedia.com/blog/wp-content/uploads/2019/12/Customer-Experience-Management-Conoce-5-Herramientas-de-Utilidad-banner.jpg" alt=""
+          class="img-fluid" width="200px">
+      </div>
+    </div>
+    <div class="row text-center mt-5">
+      <div class="col">
+        <h2>VENTA DETALLE</h2>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-2">
+        <label for="txtId" class="from-label">IDVenta</label>
+        <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]="ventaDetalle.IDVentaDetalle" disabled="true">
+      </div>
+      <div class="col-md-4">
+        <label for="txtNombre" class="from-label">IDCliente</label>
+        <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]="ventaDetalle.IDVenta">
+      </div>
+      <div class="col-md-2">
+        <label for="txtEdad" class="from-label">IDEmpleado</label>
+        <input type="text" name="id" id="txtEdad" class="form-control" [(ngModel)]="ventaDetalle.IDProducto">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Fecha</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="ventaDetalle.Cantidad">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Iva</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="ventaDetalle.PrecioUnitario">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Subtotal</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="ventaDetalle.Subtotal">
+      </div>
+    
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <button class="btn btn-success" type="button" (click)="nuevo(ventaDetalle)">Agregar</button>
+        <button class="btn btn-warning m-2" type="button" (click)="actualizar(ventaDetalle)">Modificar</button>
+        <button class="btn btn-danger" type="button" (click)="eliminar(ventaDetalle.IDVentaDetalle)">Eliminar</button>
+        <button class="btn btn-primary m-2" type="button" (click)="limpiar()">Limpiar</button>
+      </div>
+      
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <table id="dtMascota" class="table table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Seleccionar</th>
+              <th>IDVentaDetalle</th>
+              <th>IDVenta</th>
+              <th>IDProducto</th>
+              <th>Cantidad</th>
+              <th>Precio Unitario</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of datatable">
+              <td><input type="button" value="Seleccionar" (click)="establecerData(item)"></td>
+              <td> {{ item.IDVentaDetalle }} </td>
+              <td> {{ item.IDVenta }}</td>
+              <td>{{ item.IDProducto }}</td>
+              <td>{{ item.Cantidad }}</td>
+              <td>{{ item.PrecioUnitario }}</td>
+              <td>{{ item.Subtotal }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

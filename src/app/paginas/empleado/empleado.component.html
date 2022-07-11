@@ -1,0 +1,87 @@
+<div class="container">
+    <div class="row text-center mt-4">
+      <div class="col">
+        <img src="https://debmedia.com/blog/wp-content/uploads/2019/12/Customer-Experience-Management-Conoce-5-Herramientas-de-Utilidad-banner.jpg" alt=""
+          class="img-fluid" width="200px">
+      </div>
+    </div>
+    <div class="row text-center mt-5">
+      <div class="col">
+        <h2>EMPLEADOS</h2>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-md-2">
+        <label for="txtId" class="from-label">ID</label>
+        <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]="empleado.IDEmpleado" disabled="true">
+      </div>
+      <div class="col-md-2">
+        <label for="txtId" class="from-label">IDRol</label>
+        <input type="text" name="id" id="txtId" class="form-control" [(ngModel)]="empleado.IDRol" >
+      </div>
+      <div class="col-md-4">
+        <label for="txtNombre" class="from-label">Nombre</label>
+        <input type="text" name="id" id="txtNombre" class="form-control" [(ngModel)]="empleado.Nombre">
+      </div>
+      <div class="col-md-2">
+        <label for="txtEdad" class="from-label">Apellido</label>
+        <input type="text" name="id" id="txtEdad" class="form-control" [(ngModel)]="empleado.Apellido">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Cedula</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="empleado.Cedula">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Direccion</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="empleado.Direccion">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Telefono</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="empleado.Telefono">
+      </div>
+      <div class="col-md-4">
+        <label for="txtDesc" class="from-label">Genero</label>
+        <input type="text" name="id" id="txtDesc" class="form-control" [(ngModel)]="empleado.Genero">
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <button class="btn btn-success" type="button" (click)="nuevoEmpleado(empleado)">Agregar</button>
+        <button class="btn btn-warning m-2" type="button" (click)="actualizarEmpleado(empleado)">Modificar</button>
+        <button class="btn btn-danger" type="button" (click)="eliminarEmpleado(empleado.IDEmpleado)">Eliminar</button>
+        <button class="btn btn-primary m-2" type="button" (click)="limpiar()">Limpiar</button>
+      </div>
+      
+    </div>
+    <div class="row mt-5">
+      <div class="col">
+        <table id="dtMascota" class="table table-striped" style="width: 100%;">
+          <thead>
+            <tr>
+              <th>Seleccionar</th>
+              <th>Id</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Cedula</th>
+              <th>Direccion</th>
+              <th>Telefono</th>
+              <th>Genero</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of datatable">
+              <td><input type="button" value="Seleccionar" (click)="establecerData(item)"></td>
+              <td> {{ item.IDCliente }} </td>
+              
+              <td>{{ item.Nombre }}</td>
+              <td>{{ item.Apellido }}</td>
+              <td>{{ item.Cedula }}</td>
+              <td>{{ item.Direccion }}</td>
+              <td>{{ item.Telefono }}</td>
+              <td>{{ item.Genero }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
